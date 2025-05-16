@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Store - Cửa hàng nhạc cụ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Music Store</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <div class="user-section">
+                <span id="userName"></span>
+                <button onclick="logout()" class="logout-btn">Đăng xuất</button>
+                <div class="cart">
+                    <a href="#cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Music Store 1">
+            </div>
+            <div class="slide fade">
+                <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Music Store 2">
+            </div>
+            <div class="slide fade">
+                <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Music Store 3">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1>Chào mừng đến với Music Store</h1>
+            <p>Khám phá bộ sưu tập nhạc cụ chất lượng cao</p>
+            <div class="brand-filter">
+                <h3>Thương hiệu nổi tiếng</h3>
+                <div class="brand-list">
+                    <a href="index.html" class="brand-btn active">Tất cả</a>
+                    <a href="yamaha.html" class="brand-btn">Yamaha</a>
+                    <a href="roland.html" class="brand-btn">Roland</a>
+                    <a href="fender.html" class="brand-btn">Fender</a>
+                    <a href="gibson.html" class="brand-btn">Gibson</a>
+                    <a href="pearl.html" class="brand-btn">Pearl</a>
+                </div>
+            </div>
+            <a href="#products" class="cta-button">Xem sản phẩm</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2>Sản phẩm nổi bật</h2>
+        <div class="product-grid" id="product-container">
+            <!-- Products will be added here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>Giới thiệu về Music Store</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Music Store tự hào là cửa hàng nhạc cụ uy tín hàng đầu với hơn 10 năm kinh nghiệm trong lĩnh vực âm nhạc. Chúng tôi không chỉ đơn thuần là nơi bán nhạc cụ, mà còn là điểm đến tin cậy cho những người đam mê âm nhạc, từ người mới bắt đầu đến các nghệ sĩ chuyên nghiệp.</p>
+                
+                <p>Với đội ngũ nhân viên giàu kinh nghiệm và am hiểu sâu sắc về nhạc cụ, chúng tôi tự tin mang đến cho khách hàng những sản phẩm chất lượng cao từ các thương hiệu nổi tiếng thế giới như Yamaha, Roland, Fender, Gibson và Pearl. Mỗi sản phẩm đều được chúng tôi tuyển chọn kỹ lưỡng và kiểm tra chất lượng nghiêm ngặt trước khi đến tay khách hàng.</p>
+
+                <p>Không chỉ cung cấp các sản phẩm với giá cả hợp lý, Music Store còn mang đế  dịch vụ chu đáo, chế độ bảo hành uy tín và đặc biệt là những tư vấn chuyên sâu giúp khách hàng lựa chọn được nhạc cụ phù hợp nhất với nhu cầu và khả năng. Chúng tôi luôn nỗ lực không ngừng để nâng cao chất lượng dịch vụ, xứng đáng là người bạn đồng hành đáng tin cậy trên con đường khám phá và theo đuổi đam mê âm nhạc của mỗi khách hàng.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Liên hệ</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Thông tin liên hệ</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 33 Xô Viết Nghệ Tĩnh, Phường Hòa Cường Nam, Quận Hải Châu, TP.Đà Nẵng</p>
+                <p><i class="fas fa-phone"></i> 0923 456 265</p>
+                <p><i class="fas fa-envelope"></i> Nhaccu@musicstore.com</p>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <input type="text" placeholder="Họ tên" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Nội dung" required></textarea>
+                <button type="submit" class="submit-btn">Gửi tin nhắn</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Music Store</h3>
+                <p>Cửa hàng nhạc cụ uy tín hàng đầu</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên kết</h3>
+                <ul>
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#products">Sản phẩm</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Theo dõi chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Music Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Giỏ hàng</h2>
+            <div id="cart-items">
+                <!-- Cart items will be added here -->
+            </div>
+            <div class="cart-total">
+                <p>Tổng cộng: <span id="cart-total">0đ</span></p>
+                <button id="checkout-btn">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Lightbox -->
+    <div id="imageLightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightboxImage" src="" alt="Lightbox image">
+        <div class="lightbox-caption"></div>
+        <button class="lightbox-prev">&lt;</button>
+        <button class="lightbox-next">&gt;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

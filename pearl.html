@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl - Music Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Music Store - Pearl</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <div class="user-section">
+                <span id="userName"></span>
+                <button onclick="logout()" class="logout-btn">Đăng xuất</button>
+                <div class="cart">
+                    <a href="#cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Brand Banner -->
+    <section class="brand-banner">
+        <div class="brand-info">
+            <h2>Pearl Drums</h2>
+            <p>Thương hiệu trống và bộ gõ hàng đầu thế giới</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <h2>Sản phẩm Pearl</h2>
+        <div class="product-grid" id="product-container">
+            <!-- Products will be added here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Music Store</h3>
+                <p>Cửa hàng nhạc cụ uy tín hàng đầu</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên kết</h3>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="yamaha.html">Yamaha</a></li>
+                    <li><a href="roland.html">Roland</a></li>
+                    <li><a href="fender.html">Fender</a></li>
+                    <li><a href="gibson.html">Gibson</a></li>
+                    <li><a href="pearl.html">Pearl</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Theo dõi chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Music Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Giỏ hàng</h2>
+            <div id="cart-items">
+                <!-- Cart items will be added here -->
+            </div>
+            <div class="cart-total">
+                <p>Tổng cộng: <span id="cart-total">0đ</span></p>
+                <button id="checkout-btn">Thanh toán</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Hiển thị chỉ sản phẩm Pearl khi trang được tải
+        window.onload = function() {
+            // Kiểm tra đăng nhập
+            const user = localStorage.getItem('user');
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Hiển thị tên người dùng
+            const userData = JSON.parse(user);
+            document.getElementById('userName').textContent = `Xin chào, ${userData.name}`;
+
+            // Khởi tạo giỏ hàng từ localStorage nếu có
+            const savedCart = localStorage.getItem('cart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                updateCartCount();
+            }
+
+            // Chỉ hiển thị sản phẩm Pearl
+            displayBrandProducts('Pearl');
+        }
+    </script>
+</body>
+</html> 
